@@ -28,8 +28,10 @@ mongoose.connect(process.env.DB_CONNECTION, () => {
     console.log("connected do DB c:")
 });
 
+
 app.set("port", PORT);
 
 // listening
 app.listen(PORT,
     () => console.log("server is running..."));
+
