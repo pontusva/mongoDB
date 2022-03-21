@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 
 // connect to DB
-mongoose.connect('mongodb+srv://admin123:hejsan34q@cluster0.2m9az.mongodb.net/myDataBase?retryWrites=true&w=majority', () => {
+mongoose.connect(process.env.DB_CONNECTION, () => {
     console.log("connected do DB c:")
 });
 
