@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const PORT = process.env.PORT || '8080';
+const PORT = process.env.PORT || 8080;
 require('dotenv/config');
 
 // Middlewares
@@ -31,5 +31,5 @@ mongoose.connect(process.env.DB_CONNECTION, () => {
 app.set("port", PORT);
 
 // listening
-app.listen(process.env.PORT || '8080',
+app.listen(PORT,
     () => console.log("server is running..."));
