@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const PORT = process.env.PORT || 8080;
-require('dotenv/config');
+require('dotenv').config();
 
 // Middlewares
 app.use(cors());
