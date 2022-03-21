@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
         const posts = await Post.find();
         res.json(posts);
     }catch(err) {
-        res.json({message:err})
+        res.json( { message: err } )
     }
 });
 
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
         const savedPost = await post.save()
         res.json(savedPost);
     } catch (err) {
-        res.json({message: err})
+        res.json( { message: err } )
     }   
 });
 // speficig post
@@ -32,7 +32,7 @@ router.get('/:postId', async (req, res) => {
         const post = await Post.findById(req.params.postId);
         res.json(post);
     } catch (err) {
-        res.json({message:err})
+        res.json( { message: err } ) 
     } 
 });
 
@@ -42,9 +42,9 @@ router.delete('/:postId', async (req, res) => {
         const removedPost = await Post.deleteOne( { _id: req.params.postId } )
         res.json(removedPost);
     } catch(err) {
-        res.json({message:err});
+        res.json( { message: err } );
     }   
-})
+});
 
 // update a post
 router.patch('/:postId', async (req, res) => {
@@ -55,7 +55,7 @@ router.patch('/:postId', async (req, res) => {
             );
             res.json(updatedPost);
     } catch (err) {
-        res.json({message: err})
+        res.json( { message: err } )
     }
 })
 
