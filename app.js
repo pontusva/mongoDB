@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const PORT = process.env.PORT || 8080;
+const source = process.env.DB_CONNECTION;
 require('dotenv').config();
 
 // Middlewares
@@ -24,7 +25,7 @@ app.get('/', (req, res) => {
 
 
 // connect to DB
-mongoose.connect('mongodb+srv://admin123:hejsan34q@cluster0.2m9az.mongodb.net/myDataBase?retryWrites=true&w=majority', () => {
+mongoose.connect(source, () => {
     console.log("connected do DB c:")
 });
 
