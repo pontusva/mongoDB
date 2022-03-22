@@ -13,7 +13,13 @@ const PostSchema = mongoose.Schema({
 
     explanation: {
         type: String
+    },
+
+    source: {
+        type: String,
+        required: true
     }
+
 });
 
 
