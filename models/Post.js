@@ -9,6 +9,10 @@ const PostSchema = mongoose.Schema({
     quote: {
         type: String,
         required: true
+    },
+
+    explanation: {
+        type: String
     }
 });
 
