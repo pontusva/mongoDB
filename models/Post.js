@@ -10,6 +10,16 @@ const PostSchema = mongoose.Schema({
     quote: {
         type: String,
         required: true
+    },
+
+    explanation: {
+        type: String,
+        required: true
+    },
+
+    source: {
+        type: String,
+        required: true
     }
   
 
