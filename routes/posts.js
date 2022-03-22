@@ -17,7 +17,9 @@ router.post('/', async (req, res) => {
     // console.log(req.body);
     const post = new Post({
         name: req.body.name,
-        quote: req.body.quote
+        quote: req.body.quote,
+        explanation: req.body.explanation,
+        source: req.body.source
     });
     try {
         const savedPost = await post.save()
