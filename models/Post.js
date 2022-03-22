@@ -12,7 +12,8 @@ const PostSchema = mongoose.Schema({
     },
 
     explanation: {
-        type: String
+        type: String,
+        required: true
     },
 
     source: {
