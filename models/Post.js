@@ -2,23 +2,22 @@ const mongoose = require('mongoose');
 
 const PostSchema = mongoose.Schema({
     name: {
-        type: String,
-        required: true
+        type: String
+        
     },
 
     quote: {
-        type: String,
-        required: true
+        type: String
     },
 
     explanation: {
-        type: String,
-        required: true
+        type: String
+        
     },
 
     source: {
-        type: String,
-        required: true
+        type: String
+        
     }
 
 });
