@@ -14,22 +14,17 @@ router.get('/', async (req, res) => {
     }
 });
 
-// submits a post
-router.post('/military', async (req, res) => {
-    // console.log(req.body);
-    const post = new MilitaryPost({
-        name: req.body.name,
-        quote: req.body.quote,
-        explanation: req.body.explanation,
-        source: req.body.source
-    });
+router.get('/military', async (req, res) => {
     try {
-        const savedPost = await post.save()
-        res.json(savedPost);
-    } catch (err) {
+        const posts = await MilitaryPost.find();
+        res.json(posts);
+    }catch(err) {
         res.json( { message: err } )
-    }   
+    }
 });
+
+// submits a post
+
 
 
 router.post('/', async (req, res) => {
