@@ -16,7 +16,7 @@ const postsRoute = require('./routes/posts');
 const militaryRoute = require('./routes/militaryposts/');
 
 app.use('/posts', postsRoute);
-app.use('/posts/military/', militaryRoute);
+app.use('/militaryposts', militaryRoute);
 
 
 // Routes
