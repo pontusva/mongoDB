@@ -46,6 +46,7 @@ router.post('/military', async (req, res) => {
         res.json( { message: err } )
     }   
 });
+
 // speficig post
 router.get('/:postId', async (req, res) => {
     try {
