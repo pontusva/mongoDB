@@ -16,6 +16,7 @@ const postsRoute = require('./routes/posts');
 
 
 app.use('/posts', postsRoute);
+app.use('/posts/military', postsRoute);
 
 
 
