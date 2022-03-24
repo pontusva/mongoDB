@@ -15,7 +15,6 @@ router.get('/', async (req, res) => {
 });
 
 // submits a post
-
 router.post('/military', async (req, res) => {
     // console.log(req.body);
     const post = new MilitaryPost({
@@ -31,6 +30,7 @@ router.post('/military', async (req, res) => {
         res.json( { message: err } )
     }   
 });
+
 
 router.post('/', async (req, res) => {
     // console.log(req.body);

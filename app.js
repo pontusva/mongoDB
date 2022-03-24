@@ -15,8 +15,9 @@ app.use(bodyParser.json());
 const postsRoute = require('./routes/posts');
 
 
+
 app.use('/posts', postsRoute);
-app.use('/posts/military', postsRoute);
+
 
 
 
@@ -27,7 +28,7 @@ app.get('/', (req, res) => {
 
 
 
-// connect to DB
+// connect to DB använd source som forsta paramater när du e färdig
 mongoose.connect(source, () => {
     console.log("connected do DB c:")
 });
