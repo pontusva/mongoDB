@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
-const MilitaryPost = require('../models/MilitaryPost');
+
 
 // gets all the posts
 router.get('/', async (req, res) => {
@@ -29,8 +29,6 @@ router.post('/', async (req, res) => {
         res.json( { message: err } )
     }   
 });
-
-
 
 
 // speficig post
