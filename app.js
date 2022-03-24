@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 const postsRoute = require('./routes/posts');
 
 
-app.use('/posts/*', postsRoute);
+app.use('/posts', postsRoute);
 
 
 
