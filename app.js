@@ -13,10 +13,10 @@ app.use(bodyParser.json());
 
 // import routes
 const postsRoute = require('./routes/posts');
-const militaryRoute = require('./routes/militaryposts/');
+
 
 app.use('/posts', postsRoute);
-app.use('/militaryposts', militaryRoute);
+
 
 
 // Routes
