@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
+const MilitaryPost = require('../models/MilitaryPost');
 
 // gets all the posts
 router.get('/', async (req, res) => {
@@ -16,6 +17,23 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     // console.log(req.body);
     const post = new Post({
+        name: req.body.name,
+        quote: req.body.quote,
+        explanation: req.body.explanation,
+        source: req.body.source
+    });
+    try {
+        const savedPost = await post.save()
+        res.json(savedPost);
+    } catch (err) {
+        res.json( { message: err } )
+    }   
+});
+
+// If you want so submit a post from a military quote use this route
+router.post('/military', async (req, res) => {
+    // console.log(req.body);
+    const post = new MilitaryPost({
         name: req.body.name,
         quote: req.body.quote,
         explanation: req.body.explanation,
