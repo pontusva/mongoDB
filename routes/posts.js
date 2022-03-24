@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
-const MilitaryPost = require('../models/MilitaryPost/');
+const MilitaryPost = require('../models/MilitaryPost');
 
 
 // gets all the posts
