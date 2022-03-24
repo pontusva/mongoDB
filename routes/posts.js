@@ -15,21 +15,6 @@ router.get('/', async (req, res) => {
 });
 
 // submits a post
-router.post('/', async (req, res) => {
-    // console.log(req.body);
-    const post = new Post({
-        name: req.body.name,
-        quote: req.body.quote,
-        explanation: req.body.explanation,
-        source: req.body.source
-    });
-    try {
-        const savedPost = await post.save()
-        res.json(savedPost);
-    } catch (err) {
-        res.json( { message: err } )
-    }   
-});
 
 router.post('/military', async (req, res) => {
     // console.log(req.body);
@@ -46,6 +31,24 @@ router.post('/military', async (req, res) => {
         res.json( { message: err } )
     }   
 });
+
+router.post('/', async (req, res) => {
+    // console.log(req.body);
+    const post = new Post({
+        name: req.body.name,
+        quote: req.body.quote,
+        explanation: req.body.explanation,
+        source: req.body.source
+    });
+    try {
+        const savedPost = await post.save()
+        res.json(savedPost);
+    } catch (err) {
+        res.json( { message: err } )
+    }   
+});
+
+
 
 
 // speficig post
