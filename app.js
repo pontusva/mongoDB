@@ -24,7 +24,7 @@ app.use('/api/user', authRoute);
 
 // Routes
 app.get('/', (req, res) => {
-    res.send('We Are On Home');
+    res.send('github.com/pontusva');
 });
 
 
