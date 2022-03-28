@@ -4,23 +4,22 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const PORT = process.env.PORT || 8080;
+const dotenv = require('dotenv');
 const source = process.env.DB_CONNECTION;
-require('dotenv').config();
+dotenv.config();
+
+// import routes
+const postsRoute = require('./routes/posts');
+const militaryRoute = require('./routes/military');
+const authRoute = require('./routes/auth')
 
 // Middlewares
 app.use(cors());
 app.use(bodyParser.json());
 
-// import routes
-const postsRoute = require('./routes/posts');
-const militaryRoute = require('./routes/military');
-
-
 app.use('/military', militaryRoute);
 app.use('/posts', postsRoute);
-
-
-
+app.use('/api/user', authRoute);
 
 
 // Routes
@@ -31,7 +30,7 @@ app.get('/', (req, res) => {
 
 
 // connect to DB använd source som forsta paramater när du e färdig
-mongoose.connect('mongodb+srv://admin123:hejsan34q@cluster0.2m9az.mongodb.net/myDataBase?retryWrites=true&w=majority', () => {
+mongoose.connect(source, () => {
     console.log("connected do DB c:")
 });
 

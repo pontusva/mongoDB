@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
 const MilitaryPost = require('../models/MilitaryPost');
+const verify = require('./verifyToken');
 
 
 // gets all the posts
@@ -14,6 +15,8 @@ router.get('/', async (req, res) => {
     }
 });
 
+// get military posts
+
 router.get('/military', async (req, res) => {
     try {
         const posts = await MilitaryPost.find();
@@ -23,11 +26,12 @@ router.get('/military', async (req, res) => {
     }
 });
 
+
+
 // submits a post
 
 
-
-router.post('/', async (req, res) => {
+router.post('/', verify , async (req, res) => {
     // console.log(req.body);
     const post = new Post({
         name: req.body.name,

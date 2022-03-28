@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../models/Post');
 const MilitaryPost = require('../models/MilitaryPost');
 
+
+// use localhost:8080/posts/military to post to the DB
+// under the military DB.
 router.post('/', async (req, res) => {
     // console.log(req.body);
     const post = new MilitaryPost({
@@ -18,5 +20,9 @@ router.post('/', async (req, res) => {
         res.json( { message: err } )
     }   
 });
+
+// Get the military posts.
+
+
 
 module.exports = router;
