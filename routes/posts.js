@@ -30,7 +30,6 @@ router.get('/military', async (req, res) => {
 
 // submits a post
 
-
 router.post('/', verify , async (req, res) => {
     // console.log(req.body);
     const post = new Post({
