@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 
 
 // connect to DB använd source som forsta paramater när du e färdig
-mongoose.connect(source, () => {
+mongoose.connect('mongodb+srv://admin123:hejsan34q@cluster0.2m9az.mongodb.net/myDataBase?retryWrites=true&w=majority', () => {
     console.log("connected do DB c:")
 });
 
