@@ -23,7 +23,7 @@ app.use('/api/user', authRoute);
 
 // Routes
 app.get('/', (req, res) => {
-    res.send('github.com/pontusva');
+    res.send('github.com/pontusva');    
 });
 
 
